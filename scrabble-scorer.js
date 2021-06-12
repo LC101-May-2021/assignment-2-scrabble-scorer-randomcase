@@ -36,7 +36,19 @@ function initialPrompt() {
   console.log(oldScrabbleScorer(input.question("Let's play some scrabble! Enter a word:"))) 
 };
 
+function simpScorer(word) {
+word = input.question("pick a word")
+monk = word.split('')
+points = 1
+for(let i = 0; i < word.length; i++){
+  points[i] += 
+
+console.log(`${points} for ${monk[i]}`)
+}
+}
+simpScorer()
 let simpleScore;
+
 
 let vowelBonusScore;
 
