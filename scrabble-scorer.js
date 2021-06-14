@@ -36,25 +36,40 @@ function initialPrompt() {
   console.log(oldScrabbleScorer(input.question("Let's play some scrabble! Enter a word:"))) 
 };
 
-function simpScorer(word) {
-word = input.question("pick a word")
-monk = word.split('')
-points = 1
-for(let i = 0; i < word.length; i++){
-  points[i] += 
+let simpleScore = function(word){
+return word.length; 
+};
+//console.log("line 42", simpScorer("keem"))
 
-console.log(`${points} for ${monk[i]}`)
+let vowelBonusScore = function(word){
+   let points = 0
+  let vowel = "aeiou"
+  for (i = 0; i < word.length; i++){
+    if(vowel.includes(word[i].toLowerCase())){
+      points += 3
+    } else {
+    points += 1}
+  }
+return points;
 }
-}
-simpScorer()
-let simpleScore;
-
-
-let vowelBonusScore;
+//console.log(vowel("keem"))
 
 let scrabbleScore;
 
-const scoringAlgorithms = [];
+const scoringAlgorithms = [
+{ name: "Simple score",
+  description: "Each letter is worth 1 point",
+  score: simpleScore
+},
+{ name: "Bonus Vowel",
+  description: "Vowels are 3 pts, consonants are 1 pt.",
+  score: vowelBonusScore
+},
+{ name: "Scrabble"	
+  description: "The traditional scoring algorithm"
+  score: 
+}
+];
 
 function scorerPrompt() {}
 
