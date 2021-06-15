@@ -39,7 +39,7 @@ function initialPrompt() {
 let simpleScore = function(word){
 return word.length; 
 };
-//console.log("line 42", simpScorer("keem"))
+console.log(simpleScore("keem"))
 
 let vowelBonusScore = function(word){
    let points = 0
@@ -52,7 +52,7 @@ let vowelBonusScore = function(word){
   }
 return points;
 }
-//console.log(vowel("keem"))
+console.log(vowelBonusScore("keem"))
 
 let scrabbleScore;
 
@@ -65,11 +65,11 @@ const scoringAlgorithms = [
   description: "Vowels are 3 pts, consonants are 1 pt.",
   score: vowelBonusScore
 },
-{ name: "Scrabble"	
-  description: "The traditional scoring algorithm"
-  score: 
-}
-];
+{ name: "Scrabble",	
+  description: "The traditional scoring algorithm",
+  score: oldScrabbleScorer
+},
+]
 
 function scorerPrompt() {}
 
