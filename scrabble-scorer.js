@@ -32,14 +32,17 @@ function oldScrabbleScorer(word) {
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
+
+let wordValue = ""
 function initialPrompt() {
-  console.log(oldScrabbleScorer(input.question("Let's play some scrabble! Enter a word:"))) 
+wordValue = input.question("Let's play some scrabble! Enter a word:")
+ return 
 };
 
 let simpleScore = function(word){
 return word.length; 
 };
-console.log(simpleScore("keem"))
+
 
 let vowelBonusScore = function(word){
    let points = 0
@@ -52,8 +55,6 @@ let vowelBonusScore = function(word){
   }
 return points;
 }
-console.log(vowelBonusScore("keem"))
-
 let scrabbleScore;
 
 const scoringAlgorithms = [
@@ -70,15 +71,33 @@ const scoringAlgorithms = [
   score: oldScrabbleScorer
 },
 ]
+let scoreSelect = 0
+function scorerPrompt() {scoreSelect = Number(input.question(`Please select a scoring method: \n0 - ${scoringAlgorithms[0].name}: ${scoringAlgorithms[0].description}\n1 - ${scoringAlgorithms[1].name}: ${scoringAlgorithms[1].description}\n2 - ${scoringAlgorithms[2].name}: ${scoringAlgorithms[2].description}\n`))
 
-function scorerPrompt() {}
+if (scoreSelect === 0){
+  console.log(`${scoringAlgorithms[0].score(wordValue)}`)
+} else if (scoreSelect === 1)
+  console.log(`${scoringAlgorithms[1].score(wordValue)}`)
+  else if (scoreSelect === 2)
+  console.log(`${scoringAlgorithms[2].score(wordValue)}`)
 
-function transform() {};
+}
 
-let newPointStructure;
+
+
+function transform(oldPointStructure){
+let newObj = {}
+for (key of oldPointStructure) 
+  for (let points of oldPointStructure[key])
+console.log(newObj)}
+
+let newPointStructure = transform(oldPointStructure)
 
 function runProgram() {
-   initialPrompt();
+   const wordValue = initialPrompt()
+   const scoreValue = scorerPrompt()
+   //console.log(simpleScore(wordValue))
+   //initialPrompt();
    
 }
 
