@@ -53,6 +53,7 @@ let vowelBonusScore = function(word){
   }
 return points;
 }
+
 let scrabbleScore = function(word){
   let points = 0
   for (i = 0; i < word.length; i++){
@@ -60,7 +61,6 @@ let scrabbleScore = function(word){
  }
   return Number(points);
 }
-console.log(typeof initialPrompt)
 
 const scoringAlgorithms = [
 { name: "Simple score",
@@ -76,7 +76,8 @@ const scoringAlgorithms = [
   score: scrabbleScore
 },
 ]
-let scoreSelect = 0
+
+//let scoreSelect = 0
 function scorerPrompt() {scoreSelect = Number(input.question(`Please select a scoring method: \n0 - ${scoringAlgorithms[0].name}: ${scoringAlgorithms[0].description}\n1 - ${scoringAlgorithms[1].name}: ${scoringAlgorithms[1].description}\n2 - ${scoringAlgorithms[2].name}: ${scoringAlgorithms[2].description}\n`))
 
 if (scoreSelect === 0){
