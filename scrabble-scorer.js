@@ -11,7 +11,12 @@ const oldPointStructure = {
   8: ['J', 'X'],
   10: ['Q', 'Z']
 };
-//initialPrompt function
+
+let wordValue = ""
+function initialPrompt() {
+wordValue = input.question("Let's play some scrabble! Enter a word:")
+ return wordValue
+};
 
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
@@ -35,7 +40,7 @@ function oldScrabbleScorer(word) {
 
 //change to function
 //let wordValue = ""
-let initialPrompt = input.question("Let's play some scrabble! Enter a word: ")
+//let initialPrompt = input.question("Let's play some scrabble! Enter a word: ")
 
 
 let simpleScore = function(word){
@@ -82,11 +87,11 @@ const scoringAlgorithms = [
 function scorerPrompt() {scoreSelect = Number(input.question(`Please select a scoring method: \n0 - ${scoringAlgorithms[0].name}: ${scoringAlgorithms[0].description}\n1 - ${scoringAlgorithms[1].name}: ${scoringAlgorithms[1].description}\n2 - ${scoringAlgorithms[2].name}: ${scoringAlgorithms[2].description}\n`))
 
 if (scoreSelect === 0){
-  console.log(`Your score is: ${scoringAlgorithms[0].score(initialPrompt)}`)
+  console.log(`Your score is: ${scoringAlgorithms[0].score(wordValue)}`)
 } else if (scoreSelect === 1)
-  console.log(`Your score is: ${scoringAlgorithms[1].score(initialPrompt)}`)
+  console.log(`Your score is: ${scoringAlgorithms[1].score(wordValue)}`)
   else if (scoreSelect === 2)
-  console.log(`Your score is: ${scoringAlgorithms[2].score(initialPrompt)}`)
+  console.log(`Your score is: ${scoringAlgorithms[2].score(wordValue)}`)
 
 }
 
@@ -107,7 +112,7 @@ function transform(oldPointStructure){
 let newPointStructure = transform(oldPointStructure)
 
 function runProgram() {
-   //initialPrompt()
+   initialPrompt()
    scorerPrompt()
    
 }
