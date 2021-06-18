@@ -80,7 +80,7 @@ const scoringAlgorithms = [
 { name: 'Scrabble',	
   description: 'The traditional scoring algorithm',
   score: scrabbleScore 
-},
+}
 ]
 
 //let scoreSelect = 0
