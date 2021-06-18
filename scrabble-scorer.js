@@ -11,6 +11,7 @@ const oldPointStructure = {
   8: ['J', 'X'],
   10: ['Q', 'Z']
 };
+//initialPrompt function
 
 function oldScrabbleScorer(word) {
 	word = word.toUpperCase();
@@ -32,7 +33,7 @@ function oldScrabbleScorer(word) {
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
-
+//change to function
 //let wordValue = ""
 let initialPrompt = input.question("Let's play some scrabble! Enter a word: ")
 
