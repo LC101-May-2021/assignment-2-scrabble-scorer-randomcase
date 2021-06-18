@@ -73,7 +73,7 @@ const scoringAlgorithms = [
   description: 'Each letter is worth 1 point', 
   score: simpleScore 
 },
-{ name: 'Bonus Vowel', 
+{ name: 'Bonus vowel', 
   description: 'Vowels are 3 pts, consonants are 1 pt.', 
   score: vowelBonusScore 
 },
