@@ -67,19 +67,19 @@ let scrabbleScore = function(word){
  }
   return Number(points);
 }
-
+// 0 simple 1 bonus 2 traditional
 const scoringAlgorithms = [
 { name: 'Simple score', 
   description: 'Each letter is worth 1 point', 
-  score: simpleScore 
+  scoringFunction: simpleScore 
 },
 { name: 'Bonus vowel', 
   description: 'Vowels are 3 pts, consonants are 1 pt.', 
-  score: vowelBonusScore 
+  scoringFunction: vowelBonusScore 
 },
 { name: 'Scrabble',	
   description: 'The traditional scoring algorithm', 
-  score: scrabbleScore 
+  scoringFunction: scrabbleScore 
 }
 ]
 
@@ -87,11 +87,11 @@ const scoringAlgorithms = [
 function scorerPrompt() {scoreSelect = Number(input.question(`Please select a scoring method: \n0 - ${scoringAlgorithms[0].name}: ${scoringAlgorithms[0].description}\n1 - ${scoringAlgorithms[1].name}: ${scoringAlgorithms[1].description}\n2 - ${scoringAlgorithms[2].name}: ${scoringAlgorithms[2].description}\n`))
 
 if (scoreSelect === 0){
-  console.log(`Your score is: ${scoringAlgorithms[0].score(wordValue)}`)
+  console.log(`Your score is: ${scoringAlgorithms[0].scoringFunction(wordValue)}`)
 } else if (scoreSelect === 1)
-  console.log(`Your score is: ${scoringAlgorithms[1].score(wordValue)}`)
+  console.log(`Your score is: ${scoringAlgorithms[1].scoringFunction(wordValue)}`)
   else if (scoreSelect === 2)
-  console.log(`Your score is: ${scoringAlgorithms[2].score(wordValue)}`)
+  console.log(`Your score is: ${scoringAlgorithms[2].scoringFunction(wordValue)}`)
 
 }
 
